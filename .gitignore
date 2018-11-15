@@ -1,0 +1,5 @@
+postgre_env
+.env
+__pycache__
+*.pyc
+.#*
