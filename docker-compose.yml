@@ -12,6 +12,7 @@ services:
     
   web:
     build: .
+    tty: true
     command: [ "./bin/wait-for-postgres.sh", "debug", "python3", "manage.py", "runserver", "0.0.0.0:8000" ]
     env_file:
       - .env
