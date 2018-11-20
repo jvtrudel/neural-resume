@@ -1,9 +1,13 @@
 #! /bin/sh
+#
+# Setup a development instance
 
 cmd="$@"
 
-
+# set user and group id of the current user
 export GID=${GID}
 export UID=${UID}
 
+# startup container
 docker-compose up $cmd
+

@@ -1,0 +1,9 @@
+#! /bin/sh
+
+
+# todo: test si docker web est up. sinon, lancer.
+
+export UID=${UID}
+export GID=${GID}
+
+docker-compose run web sh
