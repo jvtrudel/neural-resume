@@ -1,0 +1,9 @@
+#! /bin/sh
+
+cmd="$@"
+
+
+export GID=${GID}
+export UID=${UID}
+
+docker-compose up $cmd
