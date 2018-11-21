@@ -9,8 +9,11 @@ down:
 reset-migration:
 	./bin/reset-migration.dev
 
+migrate:
+	./bin/migrate.dev
+
 shell:
-	export UID=${UID};export UID=${UID}; docker-compose run web sh
+	./bin/shell.dev
 
 dumpdata:
 	./bin/dumpdata.dev
