@@ -1,0 +1,7 @@
+#! /bin/sh
+#
+# get local information available in variable environment
+
+
+export LOCAL_UID=$(id -u):$(id -u)
+

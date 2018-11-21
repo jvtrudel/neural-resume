@@ -3,7 +3,5 @@
 
 # todo: test si docker web est up. sinon, lancer.
 
-export UID=${UID}
-export GID=${GID}
-
+. ./bin/get_local_env.dev
 docker-compose run web sh

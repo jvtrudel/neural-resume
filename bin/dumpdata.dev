@@ -4,9 +4,7 @@
 
 
 # set user and group id of the current user
-export GID=${GID}
-export UID=${UID}
-
+. ./bin/get_local_env.dev
 
 mkdir -p dev
 docker-compose run web python manage.py dumpdata --format=yaml --indent 2 core > dev/db.yaml

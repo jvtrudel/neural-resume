@@ -5,8 +5,7 @@
 cmd="$@"
 
 # set user and group id of the current user
-export GID=${GID}
-export UID=${UID}
+. ./bin/get_local_env.dev
 
 # startup container
 docker-compose up $cmd

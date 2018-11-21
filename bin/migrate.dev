@@ -1,11 +1,10 @@
 #! /bin/sh
 #
-# Setup a development instance
+# apply migrations and create a super user
+
 
 # set user and group id of the current user
-export GID=${GID}
-export UID=${UID}
-
+. ./bin/get_local_env.dev
 
 # migrate database
 
@@ -13,11 +12,8 @@ echo "migrate"
 docker-compose run web python manage.py makemigrations 
 docker-compose run web python manage.py migrate
 
-# bug: env variable UID and GID do not work...
-echo "change ownership of migration files"
-sudo chown -R $UID:$GID core/migrations/.
-
 
 echo "create superuser"
 # create superuser admin account
+# todo: frist, check if this user exists
 docker-compose run web python manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', '1234')"

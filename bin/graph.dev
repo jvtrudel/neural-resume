@@ -1,9 +1,8 @@
 #! /bin/sh
+#
+# Generate a graph of the model
 
-export GID=${GID}
-export UID=${UID}
-
-
+. ./bin/get_local_env.dev
 mkdir -p doc/img
 
 docker-compose run web python manage.py graph_models -a -o  doc/img/project_graph.png
