@@ -1,0 +1,8 @@
+#! /bin/sh
+#
+# Import data
+
+if [ -f dev/db.yaml ]; then
+    echo "load data"
+   docker-compose run web python manage.py loaddata dev/db.yaml
+fi
