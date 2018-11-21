@@ -17,9 +17,12 @@ shell:
 
 dumpdata:
 	./bin/dumpdata.dev
+
 loaddata:
 	./bin/loaddata.dev
 
-
 wipe-docker:
 	./bin/wipe-docker.dev
+
+graph:
+	./bin/graph.dev

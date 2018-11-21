@@ -5,7 +5,8 @@ RUN apk add --no-cache \
   python3-dev \
   musl-dev \
   postgresql-dev  \
-  postgresql-client 
+  postgresql-client \
+  graphviz-dev  font-bitstream-type1
 
 WORKDIR /app
 COPY . /app

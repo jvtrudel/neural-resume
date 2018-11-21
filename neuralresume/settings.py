@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core'
+    'core',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Generate Graph Models
+# https://django-extensions.readthedocs.io/en/latest/graph_models.html
+GRAPH_MODELS = {
+  'all_applications': False,
+  'group_models': True,
+}
+
