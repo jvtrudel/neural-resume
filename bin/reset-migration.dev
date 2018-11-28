@@ -6,11 +6,15 @@
 . ./bin/get_local_env.dev
 
 
-# migrate database
-
 echo "erase migration files"
-rm -r core/migrations/*
-touch core/migrations/__init__.py
+rm -rf */migrations/*
+
+#  todo: get a list of all apps
+for i in core app project resume team user
+do
+    echo "process $i"
+  touch $i/migrations/__init__.py
+done
 
 ./bin/migrate.dev
 

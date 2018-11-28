@@ -1,0 +1,6 @@
+#! /bin/sh
+#
+# Compile assets
+
+mkdir -p assets/css
+sass assets/sass/style.sass >assets/css/style.css 

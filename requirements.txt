@@ -3,3 +3,6 @@ psycopg2
 pyyaml
 pygraphviz
 django-extensions
+djangorestframework
+django-filter
+django-easy-select2

@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'project',
+    'resume',
+    'user',
+    'team',
+    'app',
     'django_extensions',
 ]
 
@@ -58,6 +63,11 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR,  'templates'),
+            os.path.join(BASE_DIR,  'team/templates'),
+            os.path.join(BASE_DIR,  'project/templates'),
+            os.path.join(BASE_DIR,  'resume/templates'),
+            os.path.join(BASE_DIR,  'user/templates'),
+            os.path.join(BASE_DIR,  'app/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -127,7 +137,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,'assets/css'),
+    os.path.join(BASE_DIR,'assets/js'),
+    os.path.join(BASE_DIR,'assets/img'),
+]
 
 # Generate Graph Models
 # https://django-extensions.readthedocs.io/en/latest/graph_models.html
@@ -135,4 +149,3 @@ GRAPH_MODELS = {
   'all_applications': False,
   'group_models': True,
 }
-

@@ -6,8 +6,8 @@
 # set user and group id of the current user
 . ./bin/get_local_env.dev
 
-# migrate database
 
+# migrate database
 echo "migrate"
 docker-compose run web python manage.py makemigrations 
 docker-compose run web python manage.py migrate

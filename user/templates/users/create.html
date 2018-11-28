@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h1> Create a nwe User</h1>
+<form method="post">
+    {% csrf_token %}
+    {{personForm.as_p}}
+    {{addressForm.as_p}}
+    <button type=submit" class="btn btn-primary">Save</button>
+</form>
+{% endblock %}

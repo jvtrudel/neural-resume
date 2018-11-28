@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-md navbar-light" >
+    <a class="navbar-brand {% if request.path == '/' %} active {% endif %}" href="#">Neural Résumé</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="navbar-item {% if request.path == '/users' %} active {% endif %}">
+                <a class="nav-link" href="/users">Users</a>
+            </li>
+            <li class="navbar-item {% if request.path == '/projects' %} active {% endif %}">
+                <a class="nav-link" href="/projects">Projects</a>
+            </li>
+            <li class="navbar-item {% if request.path == '/resumes' %} active {% endif %}">
+                <a class="nav-link" href="/resumes">Résumés</a>
+            </li>
+            <li class="navbar-item {% if request.path == '/team' %} active {% endif %}">
+                <a class="nav-link" href="/team">Team</a>
+          </li>
+        </ul>
+    </div>
+</nav>
