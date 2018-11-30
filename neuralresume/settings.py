@@ -49,6 +49,7 @@ INSTALLED_APPS = (
 
     # Local apps
     'core',
+    'resume',
 )
 
 
@@ -110,7 +111,7 @@ TIME_ZONE = 'EST'
 LANGUAGE_CODE = 'en'
 
 # See https://docs.djangoproject.com/en/1.6/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
+ALLOWED_HOSTS = [] #os.environ.get('ALLOWED_HOSTS')
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-i18n
 USE_I18N = True
@@ -149,6 +150,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': (
             os.path.join(PROJECT_PATH,  'templates'),
+            os.path.join(PROJECT_PATH,  'resume/templates'),
         ),
         'OPTIONS': {
             'context_processors': [
