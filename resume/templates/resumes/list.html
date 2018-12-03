@@ -1,4 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-list view
+<h1>List of All Résumés</h1>
+<ul class="list-group">
+    {% for resume in list_object %}
+    <li class="list-group-item">
+        <a href="{% url 'resumes:show' resume.id %}"> {{resume.title}}</a>
+        <a href="{% url 'resumes:delete' resume.id %}"><button class="btn btn-danger">delete</button></a>
+    </li>
+    {% endfor %}
+    <a href="{% url 'resumes:create' %}">
+        <button class="btn bth-primary">New Résumé</button>
+    </a>
+</ul>
 {% endblock %}

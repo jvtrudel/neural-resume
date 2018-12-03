@@ -12,8 +12,16 @@ django-shell:
 shell:
 	docker-compose run web sh
 
-wipe-docker:
-	docker stop $(docker ps -aq) ;\
-	docker rm $(docker ps -aq) ;\
-	docker rmi $(docker images -q)
+wipe-dockers:
+# Un peu trop violent...
+# todo: détruire uniquement le projet courant
+	docker stop $(shell docker ps -aq) ;\
+	docker rm $(shell docker ps -aq) ;\
+	docker rmi $(shell docker images -q)
+
+init-db:
+	docker-compose run web ./manage.py makemigrations
+	docker-compose run web ./manage.py migrate
+	docker-compose run web ./manage.py loaddata resume/migrations/fixtures/dev_data.json
+
 

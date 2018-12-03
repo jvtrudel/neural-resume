@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
+from resume.models import Resume
 
-#from resume.models import Resume
 #from resume.forms import ResumeForm
 
 def list(request):
     """View of all available resumes"""
-    return render(request,"resumes/list.html")
+    resumes=Resume.objects.all()
+    context={'list_object':resumes}
+    return render(request,"resumes/list.html",context)
 
 def show(request,id):
     """View of all one resume"""

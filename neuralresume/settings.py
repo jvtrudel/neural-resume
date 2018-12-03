@@ -56,7 +56,7 @@ INSTALLED_APPS = (
 # MIDDLEWARE CONFIGURATION
 # ------------------------------------------------------------------------------
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE= (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -258,3 +258,7 @@ LOGGING = {
         },
     }
 }
+
+FIXTURES_DIR=(
+    os.path.join(PROJECT_PATH,"resume/migrations/fixtures")
+)
