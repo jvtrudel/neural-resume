@@ -20,5 +20,5 @@ from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
-    path(r'resumes',include('resume.urls'))
+    path(r'resumes/',include('resume.urls'))
 ]

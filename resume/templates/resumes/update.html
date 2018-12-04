@@ -1,4 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-update view
+
+<h1> Update a CV </h1>
+
+<div class="d-flex flex-row">
+    <a href="{% url 'resumes:update' id %}">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </a>
+    <a href="{% url 'resumes:show' id %}">
+        <button type="submit" class="btn btn-danger">Cancel</button>
+    </a>
+</div>
+
+<div class="d-flex flex-column">
+     {{ resume.as_p }}
+</div>
 {% endblock %}

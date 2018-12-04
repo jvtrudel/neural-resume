@@ -1,4 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-show view
+{% block section_meta %}
+<h1>{{ resume.title.value }}</h1>
+<p>{{ resume.description.value }}</p>
+{% endblock %}
+<div class="d-flex flex-row">
+    <a href="{% url 'resumes:update' id %}">
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </a>
+    <a href="{% url 'resumes:delete' id %}">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </a>
+</div>
+
+<h2>Informations générales</h2>
+{% block section_general %}
+<table>
+    {% for field in resume %}
+    {% if "Description du CV" not in field.label and "Titre du CV" not in field.label  %}
+    <tr>
+        <td>{{ field.label }}</td>
+        <td>{{ field.value }}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+</table>
+{% endblock %}
 {% endblock %}

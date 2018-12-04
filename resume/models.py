@@ -1,28 +1,42 @@
 from django.db import models
-from core.models import Phone, Address, Fax
-
-
-class Candidat(models.Model):
-    firstName=models.CharField(
-        max_length=50
-    )
-    lastName=models.CharField(
-        max_length=50
-    )
-    email=models.EmailField()
-    phone=Phone()
-
-class Firm(models.Model):
-    name=models.CharField(
-        max_length=75
-    )
-    address=Address()
-    fax=Fax()
-    url=models.URLField()
 
 
 class Resume(models.Model):
-    title=models.CharField(max_length=50)
-    description=models.TextField()
-    candidat=Candidat()
-    firm=Firm()
+
+    SFL_BUREAUX=(
+        ('M','Montréal'),
+        ('Q','Québec')
+    )
+
+    title=models.CharField(
+        max_length=50,
+        verbose_name="Titre du CV"
+    )
+    description=models.TextField(
+        verbose_name="Description du CV"
+    )
+    prenom_consultant=models.CharField(
+        max_length=50,
+        verbose_name="Prénom du consultant"
+    )
+    nom_consultant=models.CharField(
+        max_length=50,
+        verbose_name="Nom du consultant"
+    )
+    titre_consultant=models.CharField(
+        max_length=50,
+        verbose_name="Titre du consultant"
+    )
+
+    date_de_naissance=models.DateField(
+        verbose_name="Date de naissance"
+    )
+    courriel=models.EmailField(
+        verbose_name="Courriel"
+    )
+    bureau=models.CharField(
+        max_length=2,
+        choices=SFL_BUREAUX,
+        verbose_name='Bureau',
+        default="M"
+    )
